@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="멍냥라이프는 입양 준비, 품종 정보, 건강관리, 집사 능력 테스트, 지역 커뮤니티와 Q&A를 제공하는 반려생활 종합 플랫폼입니다.">
+  <meta name="keywords" content="반려동물, 강아지, 고양이, 입양, 품종백과, 건강관리, 집사 테스트, 커뮤니티">
+  <meta name="author" content="MungNyang Life">
+  <meta property="og:title" content="멍냥라이프 - 행복한 반려생활의 시작">
+  <meta property="og:description" content="강아지와 고양이를 위한 입양 준비부터 건강관리, 커뮤니티까지 한 번에.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="멍냥라이프">
+  <meta name="twitter:description" content="행복한 반려생활의 시작">
+  <title>멍냥라이프 | 행복한 반려생활의 시작</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%F0%9F%90%B6%3C/text%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="app-loader" id="loader" aria-label="로딩 중">
+    <div class="app-loader__bubble"><span>멍냥라이프</span></div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="nav" aria-label="주요 메뉴">
+      <a class="nav__brand" href="#home" aria-label="멍냥라이프 홈">
+        <span class="nav__brand-mark">MN</span>
+        <span class="nav__brand-text">멍냥라이프</span>
+      </a>
+      <button class="nav__toggle icon-button" id="menuToggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav__panel" id="navPanel">
+        <ul class="nav__menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#care">반려동물 키우기</a></li>
+          <li><a href="#breeds">품종백과</a></li>
+          <li><a href="#health">건강관리</a></li>
+          <li><a href="#test">집사능력 테스트</a></li>
+          <li><a href="#community">커뮤니티</a></li>
+          <li><a href="#meetups">지역모임</a></li>
+          <li><a href="#qa">Q&A</a></li>
+          <li><a href="#notice">공지사항</a></li>
+          <li><a href="#mypage">마이페이지</a></li>
+        </ul>
+        <form class="nav__search" id="globalSearchForm" role="search">
+          <label class="sr-only" for="globalSearch">통합 검색</label>
+          <i data-lucide="search"></i>
+          <input id="globalSearch" type="search" placeholder="품종, 노하우, 지역 검색" autocomplete="off">
+          <div class="search-suggest" id="searchSuggest" role="listbox" aria-label="검색 자동완성"></div>
+        </form>
+        <div class="nav__actions">
+          <button class="icon-button" id="themeToggle" type="button" aria-label="다크모드 전환"><i data-lucide="moon"></i></button>
+          <button class="icon-button" id="notifyButton" type="button" aria-label="알림"><i data-lucide="bell"></i><span class="badge">3</span></button>
+          <button class="avatar-button" id="profileButton" type="button" aria-label="프로필 보기">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=120&q=80" alt="프로필 이미지">
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="home" aria-labelledby="heroTitle">
+      <div class="hero__decor hero__decor--one">발자국</div>
+      <div class="hero__decor hero__decor--two">풍선</div>
+      <div class="hero__inner">
+        <div class="hero__content" data-aos="fade-up">
+          <p class="eyebrow">오늘도 사랑스럽게, 함께 성장하는 반려생활</p>
+          <h1 id="heroTitle">행복한 반려생활의 시작</h1>
+          <p class="hero__typing" id="typingText" aria-live="polite"></p>
+          <p class="hero__copy">입양 전 준비부터 건강 루틴, 집사 능력 테스트, 우리 동네 모임까지 필요한 정보를 한곳에 모았습니다.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#test"><i data-lucide="sparkles"></i>집사 테스트</a>
+            <a class="button button--soft" href="#community"><i data-lucide="messages-square"></i>커뮤니티</a>
+          </div>
+          <article class="today-card" aria-label="오늘의 반려정보">
+            <span>오늘의 반려정보</span>
+            <strong>물을 자주 갈아주면 음수량 체크와 구강 건강 관리에 도움이 됩니다.</strong>
+          </article>
+        </div>
+        <div class="hero__visual" data-aos="zoom-in">
+          <img class="hero__image hero__image--dog" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80" alt="잔디 위에서 웃는 강아지" loading="eager">
+          <img class="hero__image hero__image--cat" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80" alt="귀여운 고양이 얼굴" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="care" aria-labelledby="careTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Care Guide</p>
+        <h2 id="careTitle">반려동물 키우기</h2>
+        <p>입양부터 노령기까지 꼭 필요한 루틴을 체크리스트와 함께 확인하세요.</p>
+      </div>
+      <div class="accordion" id="careAccordion" data-aos="fade-up"></div>
+    </section>
+
+    <section class="section section--tint" id="breeds" aria-labelledby="breedsTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Breed Encyclopedia</p>
+        <h2 id="breedsTitle">품종 백과</h2>
+        <p>생활 패턴에 맞는 반려동물을 찾을 수 있도록 성격, 운동량, 건강 정보를 정리했습니다.</p>
+      </div>
+      <div class="toolbar" data-aos="fade-up">
+        <label class="field field--search">
+          <span class="sr-only">품종 검색</span>
+          <i data-lucide="search"></i>
+          <input id="breedSearch" type="search" placeholder="품종명 또는 성격 검색">
+        </label>
+        <div class="chips" id="breedFilters" aria-label="품종 필터"></div>
+      </div>
+      <div class="card-grid breed-grid" id="breedGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="health" aria-labelledby="healthTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Daily Health</p>
+        <h2 id="healthTitle">건강관리 체크리스트</h2>
+        <p>매일 반복되는 관리 항목을 저장하고 진행률을 확인하세요.</p>
+      </div>
+      <div class="health-panel" data-aos="fade-up">
+        <div class="health-panel__summary">
+          <div class="ring" id="healthRing" aria-label="건강관리 진행률">0%</div>
+          <button class="button button--soft" id="resetHealth" type="button"><i data-lucide="rotate-ccw"></i>오늘 리셋</button>
+        </div>
+        <div class="check-grid" id="healthChecklist"></div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="test" aria-labelledby="testTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Guardian Test</p>
+        <h2 id="testTitle">집사 능력 테스트</h2>
+        <p>20문항을 풀고 나의 반려생활 이해도를 확인해보세요.</p>
+      </div>
+      <div class="test-shell" data-aos="fade-up">
+        <div class="test-card" id="quizCard"></div>
+        <aside class="result-card" id="resultCard" hidden>
+          <canvas id="scoreChart" width="240" height="240" aria-label="점수 원형 그래프"></canvas>
+          <h3 id="scoreGrade">결과 대기 중</h3>
+          <p id="scoreText"></p>
+          <div class="result-card__actions">
+            <button class="button button--primary" id="shareResult" type="button"><i data-lucide="share-2"></i>공유</button>
+            <button class="button button--soft" id="retryQuiz" type="button"><i data-lucide="refresh-cw"></i>다시하기</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="community" aria-labelledby="communityTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Community</p>
+        <h2 id="communityTitle">커뮤니티</h2>
+        <p>우리 아이 자랑, 산책 후기, 생활 노하우를 함께 나눠요.</p>
+      </div>
+      <div class="community-layout">
+        <form class="write-card" id="postForm" data-aos="fade-right">
+          <h3>글쓰기</h3>
+          <div class="form-grid">
+            <label>닉네임<input name="nickname" required placeholder="예: 말랑집사"></label>
+            <label>지역<select name="region" required></select></label>
+            <label>반려동물<select name="petType" required><option>강아지</option><option>고양이</option></select></label>
+            <label>사진 업로드<input name="photo" type="file" accept="image/*"></label>
+          </div>
+          <label>제목<input name="title" required placeholder="제목을 입력하세요"></label>
+          <label>내용<textarea name="content" required rows="5" placeholder="따뜻한 이야기를 남겨주세요"></textarea></label>
+          <button class="button button--primary" type="submit"><i data-lucide="send"></i>등록하기</button>
+        </form>
+        <div class="post-area" data-aos="fade-left">
+          <div class="toolbar toolbar--compact">
+            <label class="field field--search"><i data-lucide="search"></i><input id="postSearch" type="search" placeholder="게시글 검색"></label>
+            <select id="postSort" aria-label="게시글 정렬"><option value="latest">최신순</option><option value="popular">인기순</option></select>
+          </div>
+          <div class="post-list" id="postList"></div>
+          <button class="button button--soft button--wide" id="loadMorePosts" type="button">더 보기</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="meetups" aria-labelledby="meetupsTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Local Meetups</p>
+        <h2 id="meetupsTitle">지역모임</h2>
+        <p>지역을 선택하면 가까운 산책 모임과 케어 스터디를 자동으로 보여드립니다.</p>
+      </div>
+      <div class="chips chips--center" id="regionFilters" data-aos="fade-up"></div>
+      <div class="card-grid meetup-grid" id="meetupGrid"></div>
+    </section>
+
+    <section class="section" id="qa" aria-labelledby="qaTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Q&A</p>
+        <h2 id="qaTitle">질문답변</h2>
+        <p>궁금한 것을 질문하고 경험 많은 집사의 베스트 답변을 확인하세요.</p>
+      </div>
+      <div class="qa-layout">
+        <form class="write-card" id="questionForm" data-aos="fade-right">
+          <h3>질문 작성</h3>
+          <label>질문 제목<input name="title" required placeholder="예: 고양이가 물을 잘 안 마셔요"></label>
+          <label>상세 내용<textarea name="content" required rows="4" placeholder="상황을 자세히 적어주세요"></textarea></label>
+          <button class="button button--primary" type="submit"><i data-lucide="circle-help"></i>질문 등록</button>
+        </form>
+        <div class="qa-list" id="qaList" data-aos="fade-left"></div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="notice" aria-labelledby="noticeTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">Notice & FAQ</p>
+        <h2 id="noticeTitle">공지사항과 FAQ</h2>
+        <p>서비스 소식, 이벤트, 자주 묻는 질문을 확인하세요.</p>
+      </div>
+      <div class="accordion" id="noticeAccordion" data-aos="fade-up"></div>
+    </section>
+
+    <section class="section" id="mypage" aria-labelledby="mypageTitle">
+      <div class="section__head" data-aos="fade-up">
+        <p class="eyebrow">My Page</p>
+        <h2 id="mypageTitle">마이페이지</h2>
+      </div>
+      <div class="profile-card" data-aos="zoom-in">
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=360&q=80" alt="마이페이지 프로필 사진" loading="lazy">
+        <div>
+          <p class="eyebrow">집사레벨</p>
+          <h3 id="myNickname">말랑한 프로집사</h3>
+          <p id="myLevel">★★★★★ 프로집사</p>
+        </div>
+        <dl class="profile-stats">
+          <div><dt>작성글</dt><dd id="myPosts">0</dd></div>
+          <div><dt>좋아요</dt><dd id="myLikes">0</dd></div>
+          <div><dt>최고점</dt><dd id="myBestScore">0</dd></div>
+          <div><dt>북마크</dt><dd id="myBookmarks">0</dd></div>
+        </dl>
+      </div>
+      <div class="activity-grid">
+        <article class="activity-card">
+          <h3>최근 본 글</h3>
+          <ul id="recentViews"></ul>
+        </article>
+        <article class="activity-card">
+          <h3>즐겨찾기</h3>
+          <ul id="bookmarkList"></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <strong>멍냥라이프</strong>
+        <p>행복한 반려생활의 시작</p>
+      </div>
+      <nav aria-label="푸터 메뉴">
+        <a href="#home">소개</a>
+        <a href="#notice">이용약관</a>
+        <a href="#notice">개인정보처리방침</a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+      <div class="social">
+        <button class="icon-button" type="button" aria-label="인스타그램"><i data-lucide="instagram"></i></button>
+        <button class="icon-button" type="button" aria-label="유튜브"><i data-lucide="youtube"></i></button>
+        <button class="icon-button" type="button" aria-label="메일"><i data-lucide="mail"></i></button>
+      </div>
+      <small>Copyright 2026 MungNyang Life. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <button class="back-to-top icon-button" id="backToTop" type="button" aria-label="맨 위로"><i data-lucide="arrow-up"></i></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="modal" id="appModal" aria-labelledby="modalTitle">
+    <button class="modal__close icon-button" id="modalClose" type="button" aria-label="닫기"><i data-lucide="x"></i></button>
+    <h2 id="modalTitle"></h2>
+    <div id="modalBody"></div>
+  </dialog>
+</body>
+</html>
