@@ -178,10 +178,17 @@ img {
 .nav__menu {
   display: flex;
   align-items: center;
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
   gap: 0.35rem;
+  min-width: 0;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.nav__menu li {
+  flex: 0 0 auto;
 }
 
 .nav__menu a {
@@ -191,6 +198,8 @@ img {
   color: var(--color-muted);
   font-size: 0.9rem;
   font-weight: 700;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .nav__menu a:hover,
@@ -201,8 +210,9 @@ img {
 
 .nav__search {
   position: relative;
-  flex: 1 1 220px;
-  min-width: 170px;
+  flex: 1 0 210px;
+  min-width: 180px;
+  max-width: 260px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1030,7 +1040,7 @@ h3 {
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .nav {
     justify-content: space-between;
   }
@@ -1061,6 +1071,11 @@ h3 {
   .nav__menu,
   .nav__actions {
     flex-wrap: wrap;
+  }
+
+  .nav__menu a {
+    white-space: normal;
+    word-break: keep-all;
   }
 }
 
